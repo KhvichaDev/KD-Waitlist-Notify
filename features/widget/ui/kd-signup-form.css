@@ -1,0 +1,605 @@
+/**
+ * Stylesheet for the Early Bird registration signup form.
+ * Implements a modern premium dark card with high-end SaaS gradients,
+ * in-field floating labels, custom fonts, and animated button interactions.
+ * Also includes styles and animations for the vector success screen.
+ */
+
+/* Universal font and reset wrapper to override heavy theme settings */
+.kd-signup-container,
+.kd-signup-container * {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    box-sizing: border-box;
+    letter-spacing: -0.01em;
+}
+
+/* Custom premium scrollbar styles */
+.kd-signup-container ::-webkit-scrollbar,
+.kd-signup-container select::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.kd-signup-container ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+}
+.kd-signup-container ::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3) !important;
+    border-radius: 4px;
+}
+.kd-signup-container ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.6) !important;
+}
+.kd-signup-container * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 102, 241, 0.3) rgba(255, 255, 255, 0.02);
+}
+
+.kd-signup-container {
+    width: 100%;
+    max-width: 440px;
+    margin: 2.5rem auto;
+}
+
+/* Premium Waitlist Card */
+.kd-signup-card {
+    background: #0b0f19 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 24px !important;
+    padding: 3rem 2.5rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 50px rgba(99, 102, 241, 0.12) !important;
+    color: #f8fafc !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle ambient background glow in card corner */
+.kd-signup-card::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.kd-signup-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.25) !important;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(139, 92, 246, 0.18) !important;
+}
+
+/* Typography elements */
+.kd-signup-header {
+    margin-bottom: 2.2rem;
+    text-align: center;
+}
+
+.kd-signup-title {
+    font-size: 2.1rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.6rem 0 !important;
+    background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -0.03em !important;
+}
+
+.kd-signup-subtitle {
+    color: #94a3b8 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+}
+
+.kd-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Input Fields Container */
+.kd-form-group {
+    position: relative;
+    width: 100%;
+}
+
+/* Premium In-Field Input styling */
+.kd-input {
+    width: 100% !important;
+    height: 56px !important;
+    padding: 22px 16px 6px 16px !important; /* Space for the inner label at the top */
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 14px !important;
+    outline: none !important;
+    color: #ffffff !important;
+    font-family: inherit !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.kd-input:focus {
+    border-color: #6366f1 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Custom In-field floating label animation */
+.kd-label {
+    position: absolute !important;
+    left: 16px !important;
+    top: 18px !important;
+    color: #64748b !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    pointer-events: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+/* Floating behavior when active or filled */
+.kd-input:focus ~ .kd-label,
+.kd-input:not(:placeholder-shown) ~ .kd-label {
+    top: 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #818cf8 !important;
+}
+
+/* Gradient Action Button */
+.kd-submit-btn {
+    margin-top: 10px !important;
+    position: relative;
+    width: 100%;
+    height: 52px;
+    border: none !important;
+    border-radius: 14px !important;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%) !important;
+    background-size: 200% auto !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3) !important;
+}
+
+.kd-submit-btn:hover {
+    background-position: right center !important;
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5) !important;
+    transform: translateY(-2px);
+}
+
+.kd-submit-btn:active {
+    transform: translateY(1px);
+}
+
+.kd-submit-btn:disabled {
+    background: #1e293b !important;
+    color: #475569 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Spinner for loading state */
+.kd-spinner {
+    display: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: kd_spin 0.6s linear infinite;
+    position: absolute;
+}
+
+.kd-submit-btn.kd-loading .kd-btn-text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.kd-submit-btn.kd-loading .kd-spinner {
+    display: block;
+}
+
+@keyframes kd_spin {
+    to { transform: rotate(360deg); }
+}
+
+/* SaaS-style alert messages (used for inline errors) */
+.kd-message {
+    padding: 1rem 1.2rem !important;
+    border-radius: 14px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-weight: 500 !important;
+    animation: kd_fade_in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.kd-message.kd-success {
+    background: rgba(16, 185, 129, 0.08) !important;
+    border: 1px solid rgba(16, 185, 129, 0.2) !important;
+    color: #34d399 !important;
+}
+
+.kd-message.kd-error {
+    background: rgba(239, 68, 68, 0.08) !important;
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    color: #f87171 !important;
+}
+
+.kd-message svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+/* ==========================================
+ * SUCCESS SCREEN VISUALS & ANIMATIONS
+ * ========================================== */
+
+.kd-signup-success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+    animation: kd_fade_in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.kd-success-icon-box {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Vector self-drawing checkmark styling */
+.kd-checkmark-svg {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3.5;
+    stroke: #10b981;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px rgba(16, 185, 129, 0);
+    animation: kd_checkmark_fill .4s ease-in-out .4s forwards, 
+               kd_checkmark_scale .3s ease-in-out 0s both;
+}
+
+.kd-checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 3.5;
+    stroke-miterlimit: 10;
+    stroke: #10b981;
+    fill: none;
+    animation: kd_stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.kd-checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke: #10b981;
+    animation: kd_stroke 0.35s cubic-bezier(0.65, 0, 0.45, 1) 0.55s forwards;
+}
+
+@keyframes kd_stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes kd_checkmark_scale {
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.15, 1.15, 1); }
+}
+
+@keyframes kd_checkmark_fill {
+    100% { box-shadow: inset 0px 0px 0px 40px rgba(16, 185, 129, 0.1); }
+}
+
+/* Success Typography styling */
+.kd-success-title {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 0.8rem 0 !important;
+    background: linear-gradient(135deg, #34d399 0%, #a7f3d0 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.2 !important;
+}
+
+.kd-success-message {
+    color: #94a3b8 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    max-width: 320px;
+}
+
+@keyframes kd_fade_in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+ * PHONE INPUT GROUP WITH COUNTRY CODE
+ * ========================================== */
+
+.kd-phone-input-group {
+    display: flex !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+.kd-country-select {
+    width: 100px !important;
+    height: 56px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: none !important;
+    border-radius: 14px 0 0 14px !important;
+    padding: 0 28px 0 12px !important;
+    color: #ffffff !important;
+    outline: none !important;
+    font-size: 14px !important;
+    line-height: 54px !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E") !important;
+    background-position: right 8px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 16px !important;
+}
+
+.kd-country-select:focus {
+    border-color: #6366f1 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+}
+
+.kd-country-select option,
+.kd-country-select optgroup {
+    background: #0b0f19 !important;
+    color: #ffffff !important;
+}
+
+.kd-phone-field {
+    border-radius: 0 14px 14px 0 !important;
+    flex: 1 !important;
+    width: calc(100% - 100px) !important;
+}
+
+.kd-phone-label {
+    left: 116px !important;
+}
+
+/* Floating behavior when active or filled (with offset for country code) */
+.kd-phone-field:focus ~ .kd-phone-label,
+.kd-phone-field:not(:placeholder-shown) ~ .kd-phone-label {
+    top: 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #818cf8 !important;
+    left: 116px !important;
+}
+
+/* ==========================================
+ * SOCIAL PROOF & SUBSCRIBER COUNT STYLES
+ * ========================================== */
+
+.kd-form-social-proof {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.kd-avatar-stack {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.kd-avatar {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #0b0f19 !important;
+    margin-left: -6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.kd-avatar:first-child {
+    margin-left: 0 !important;
+}
+
+.kd-avatar svg {
+    width: 10px !important;
+    height: 10px !important;
+    color: #ffffff !important;
+    fill: currentColor !important;
+}
+
+.kd-social-text {
+    font-size: 13px !important;
+    color: #94a3b8 !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+}
+
+.kd-social-count {
+    color: #a5b4fc !important;
+    font-weight: 600 !important;
+}
+
+/* Standalone Subscriber Count Badge Widget */
+.kd-subscriber-count-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.8rem 1.4rem !important;
+    background: #0b0f19 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(99, 102, 241, 0.08) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    gap: 12px !important;
+    font-family: 'Outfit', sans-serif !important;
+    color: #f8fafc !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none !important;
+}
+
+.kd-subscriber-count-badge:hover {
+    transform: translateY(-2px) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+    box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.6),
+                0 0 35px rgba(139, 92, 246, 0.15) !important;
+}
+
+.kd-badge-glow {
+    position: absolute !important;
+    top: -30px !important;
+    right: -30px !important;
+    width: 80px !important;
+    height: 80px !important;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(0,0,0,0) 70%) !important;
+    pointer-events: none !important;
+}
+
+.kd-badge-pulse-container {
+    width: 12px !important;
+    height: 12px !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.kd-badge-pulse-dot {
+    width: 8px !important;
+    height: 8px !important;
+    background: #34d399 !important;
+    border-radius: 50% !important;
+    display: block !important;
+    box-shadow: 0 0 8px #34d399 !important;
+}
+
+.kd-badge-pulse-ring {
+    width: 16px !important;
+    height: 16px !important;
+    border: 2px solid #34d399 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    animation: kd_pulse_expand 1.8s infinite cubic-bezier(0.25, 0, 0, 1) !important;
+    opacity: 0 !important;
+}
+
+@keyframes kd_pulse_expand {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.kd-badge-text-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 6px !important;
+}
+
+.kd-badge-number {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    line-height: 1 !important;
+}
+
+.kd-badge-label {
+    font-size: 0.85rem !important;
+    color: #94a3b8 !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+/* Consent Checkbox Styling */
+.kd-consent-group {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 4px !important;
+    text-align: left !important;
+}
+
+.kd-consent-checkbox {
+    margin-top: 4px !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+    width: 16px !important;
+    height: 16px !important;
+    accent-color: #6366f1 !important;
+}
+
+.kd-consent-label {
+    font-size: 0.85rem !important;
+    color: #94a3b8 !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+.kd-consent-required {
+    color: #ef4444 !important;
+}
+
