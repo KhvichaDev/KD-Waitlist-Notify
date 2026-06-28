@@ -3,8 +3,8 @@ Contributors: KhvichaDev
 Tags: waitlist, lead generation, coming soon, product launch, signup form
 Requires at least: 5.6
 Tested up to: 7.0
-Stable tag: 1.0
-Requires PHP: 8.2
+Stable tag: 1.0.1
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,9 @@ Yes, the plugin contains an AJAX action that automatically regenerates security 
  3. The front-end signup form with active custom fields and subscriber count badge.
  
  == Changelog ==
+ 
+ = 1.0.1 =
+ * Improved PHP compatibility. Changed minimum required PHP version from 8.2 to 7.4.
  
  = 1.0 =
  * First public release. Full waitlist functionality with multi-channel batch sending and local assets.

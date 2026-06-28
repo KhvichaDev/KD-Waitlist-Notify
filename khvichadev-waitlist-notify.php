@@ -2,12 +2,12 @@
 /**
  * Plugin Name: KhvichaDev - Waitlist & Notify
  * Description: Allows users to pre-register for upcoming products, services, or applications and enables admins to send batch notifications with a single click.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: KhvichaDev
  * Author URI: https://khvichadev.com
  * Plugin URI: https://github.com/KhvichaDev/KD-Waitlist-Notify
  * Requires at least: 5.6
- * Requires PHP: 8.2
+ * Requires PHP: 7.4
  * Tested up to: 7.0
  * Text Domain: khvichadev-waitlist-notify
  * License: GPLv2 or later
@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
  */
 define('KDWN_PATH', plugin_dir_path(__FILE__));
 define('KDWN_URL', plugin_dir_url(__FILE__));
-define('KDWN_VERSION', '1.0');
+define('KDWN_VERSION', '1.0.1');
 
 /**
  * Load core database file.
