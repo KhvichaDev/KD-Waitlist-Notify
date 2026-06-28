@@ -1,6 +1,6 @@
-# KhvichaDev - Waitlist & Notify
+# KD - Waitlist & Notify
 
-**KhvichaDev - Waitlist & Notify** is a modular and secure **WordPress waitlist & lead generation plugin** designed to capture, manage, and notify subscribers for product, service, event, or application launches.
+**KD - Waitlist & Notify** is a modular and secure **WordPress waitlist & lead generation plugin** designed to capture, manage, and notify subscribers for product, service, event, or application launches.
 
 The codebase is built following modern object-oriented programming (OOP) principles, structured directory layouts, and secure WordPress coding standards.
 
